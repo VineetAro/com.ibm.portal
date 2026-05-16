@@ -10,6 +10,26 @@ import utils.JSExecutor;
 import utils.LoggerUtil;
 import utils.ScreenshotUtil;
 
+/**
+ * LoginTests - Verifies login functionality for NYC 311 Portal
+ * 
+ * This test class covers:
+ * - Valid user login with correct credentials
+ 
+ * 
+ * 
+ * Test Data: Retrieved from resources/testdata/login_credentials.xlsx
+ * Dependencies: LoginPage, HomePage
+ * Prerequisites: Application must be accessible and database populated
+ * 
+ * @author [Developer Name]
+ * @version 1.0
+ * @since 2026-05-16
+ * @see LoginPage
+ * @see HomePage
+ */
+
+
 public class LoginTests extends BaseTest {
 
 

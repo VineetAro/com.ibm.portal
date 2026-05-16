@@ -26,3 +26,4 @@
 # Ignore local test reports and temporary files
 **/reports/
 **/*.html
+**/*.json
