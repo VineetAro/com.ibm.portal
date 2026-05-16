@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+  
+  <!-- Define Appenders (where logs go) -->
+  <Appenders>
+    
+    <!-- Console Appender -->
+    <Console name="ConsoleAppender" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1} - %m%n"/>
+    </Console>
+    
+    <!-- File Appender -->
+    <!--<File name="FileAppender" fileName="logs/automation.log">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %t %-5p %c{1} - %m%n"/>
+    </File>
+    -->
+    <!-- Rolling File Appender (automatic rotation) -->
+    <RollingFile name="RollingFileAppender" 
+             fileName="logs/automation-${date:yyyy-MM-dd}.log"
+             filePattern="logs/automation-%d{yyyy-MM-dd}-%i.log">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p %c{1} - %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+        <SizeBasedTriggeringPolicy size="10KB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10"/>
+    </RollingFile>
+    
+  </Appenders>
+  
+  <!-- Define Loggers -->
+  <Loggers>
+    
+    <!-- Root Logger (applies to all packages) -->
+    <Root level="Info">
+      <AppenderRef ref="ConsoleAppender"/>
+      <AppenderRef ref="RollingFileAppender"/>
+    </Root>
+    
+    <!-- Package-specific loggers -->
+    <Logger name="com.ibm.nyc311portal" level="debug"/>
+    
+  </Loggers>
+  
+</Configuration>

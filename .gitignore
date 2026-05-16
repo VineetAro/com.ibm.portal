@@ -1,0 +1,28 @@
+# ==========================================
+# 🛑 Custom Framework Additions
+# ==========================================
+
+# Ignore TestNG execution folders
+**/test-output/
+
+# Ignore compiled Java classes and logs
+**/*.class
+**/*.log
+
+# Ignore Config, Environment, and Properties files globally (Security Fix)
+**/*.env
+**/*.properties
+
+# Ignore the Maven target build directory completely
+/target/
+**/target/
+
+# Ignore Eclipse-specific project configuration folders
+/.settings/
+**/.settings/
+.project
+.classpath
+
+# Ignore local test reports and temporary files
+**/reports/
+**/*.html
